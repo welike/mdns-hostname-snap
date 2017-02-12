@@ -5,6 +5,7 @@ description: |
   Broadcast Ubuntu Core's current hostname in the .local namespace. Extracted
   from the Nextcloud project.
 confinement: strict
+grade: stable
 
 apps:
   mdns-publisher:
@@ -19,8 +20,8 @@ parts:
     go-packages: [github.com/kyrofa/mdns-publisher]
 
   delay-on-failure:
-    plugin: copy
-    files:
-      src/delay-on-failure/delay-on-failure: bin/
+    plugin: dump
+    source: src/
 
-
+    organize:
+      delay-on-failure: delay-on-failure/delay-on-failure
