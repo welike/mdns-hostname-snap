@@ -1,6 +1,6 @@
-name: mdns-publisher
+name: mdns-hostname
 version: 0.0.1
-summary: mDNS mini-daemon
+summary: mDNS mini-daemon to published hostname.local
 description: |
   Broadcast Ubuntu Core's current hostname in the .local namespace. Extracted
   from the Nextcloud project.
@@ -8,7 +8,7 @@ confinement: strict
 grade: stable
 
 apps:
-  mdns-publisher:
+  mdns-hostname:
     command: delay-on-failure mdns-publisher
     daemon: simple
     restart-condition: always
@@ -22,6 +22,3 @@ parts:
   delay-on-failure:
     plugin: dump
     source: src/
-
-    organize:
-      delay-on-failure: delay-on-failure/delay-on-failure
