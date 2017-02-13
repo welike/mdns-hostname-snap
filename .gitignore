@@ -1,1 +1,5 @@
 parts/
+prime/
+stage/
+*.bz2
+*.snap
